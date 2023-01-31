@@ -4,10 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script src="./logic.js">
-    </script>
+    <header class="header">
+        <h1>ROCK PAPER SCISSORS</h1>
+    </header>
+
+    <div class="info-section">
+        <div class="info-box">
+            <div class="info-text">Start The Game</div>
+        </div>
+    </div>
+
+    <div class="game-section">
+        <div class="computer">
+            <img src="./images/computer-paper.png" alt="computer image" width="550px">
+            <div class="computer-text">COMPUTER</div>
+            <div class="computer-score">0</div>
+        </div>
+
+        <div class="player">
+            <img src="./images/player-paper.png" alt="player image" width="550px">
+            <div class="player-text">player</div>
+            <div class="player-score">0</div>
+        </div>
+    </div>
+
+    <div class="player-section">
+        <div class="player-section-text">CHOOSE YOUR WEAPON!</div>
+        <div class="player-pick">
+            <button class="btnRock">Rock</button>
+            <button class="btnPaper">Paper</button>
+            <button class="btnScissors">Scissors</button>
+        </div>
+        <button class="btnReset">RESET</button>
+    </div>
 </body>
 </html>
