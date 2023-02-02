@@ -17,19 +17,19 @@
 
     <div class="info-section">
         <div class="info-box">
-            <div class="info-text">Start The Game</div>
+            <div class="info-text">Reset to Start</div>
         </div>
     </div>
 
     <div class="game-section">
         <div class="computer">
-            <img src="./images/computer-paper.png" alt="computer image" width="550px">
+            <img id="computer-image" src="./images/computer-paper.png" alt="computer image" width="550px">
             <div class="computer-text">COMPUTER</div>
             <div class="computer-score">0</div>
         </div>
 
         <div class="player">
-            <img src="./images/player-paper.png" alt="player image" width="550px">
+            <img id = "player-image" src="./images/player-paper.png" alt="player image" width="550px">
             <div class="player-text">player</div>
             <div class="player-score">0</div>
         </div>
@@ -38,11 +38,13 @@
     <div class="player-section">
         <div class="player-section-text">CHOOSE YOUR WEAPON!</div>
         <div class="player-pick">
-            <button class="btnRock">Rock</button>
-            <button class="btnPaper">Paper</button>
-            <button class="btnScissors">Scissors</button>
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
         </div>
-        <button class="btnReset">RESET</button>
+        <button id="reset">RESET</button>
     </div>
+
+    <script src="logic.js"></script>
 </body>
 </html>

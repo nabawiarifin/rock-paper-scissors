@@ -67,6 +67,14 @@ body{
      4px  4px 0 #ffffff;
 }
 
+.player-section-text{
+    text-shadow:
+    -4px -4px 0 #ffffff,  
+     4px -4px 0 #ffffff,
+    -4px  4px 0 #ffffff,
+     4px  4px 0 #ffffff;
+}
+
 .player-section{
     display: flex;
     font-size: 40px;
@@ -82,7 +90,7 @@ body{
     gap: 77px;
 }
 
-.btnRock, .btnPaper, .btnScissors{
+#rock, #paper, #scissors{
     font-family: Bangers, sans-serif; 
     font-size: 35px;
     width: 146px;
@@ -92,7 +100,7 @@ body{
     border-radius: 20px;
 }
 
-.btnReset{
+#reset{
     font-family: Bangers, sans-serif; 
     font-size: 35px;
     color: #FF0000;

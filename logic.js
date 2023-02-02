@@ -1,34 +1,70 @@
-const choice = ["Rock", "Paper", "Scissors"]
+const choice = ["rock", "paper", "scissors"]
 
-let playerSelection = prompt("Rock, Paper, Scissors?")
+const buttons = document.querySelectorAll('button');
 
-let computerSelection = (function () {
-    let randomNumber = Math.floor(Math.random() * 3)
-    return choice[randomNumber]
-})();
-console.log(`Player: ${playerSelection}\nComputer: ${computerSelection}`)
+const infoText = document.querySelector('.info-text')
+
+const computerScoreText = document.querySelector('.computer-score')
+
+const playerScoreText = document.querySelector('.player-score')
+
+let playerSelection= ""
+let computerSelection = ""
 
 let playerScore = 0
-    let computerScore = 0
+let computerScore = 0
+
+//Button Press
+buttons.forEach((button)=>{
+    button.addEventListener('click', ()=>{
+
+        playerSelection = button.id;
+        computerSelection = randomChoiceGenerator()
+        console.log(playerSelection)
+
+        if (playerSelection == "reset"){
+            resetGame()
+        } else{
+            document.getElementById('computer-image').src = `./images/computer-${computerSelection}.png`
+            document.getElementById('player-image').src = `./images/player-${playerSelection}.png`
+
+            displayScore(playerSelection, computerSelection)
+            playRound(playerSelection, computerSelection);
+        }
+
+    })
+})
+
 function playRound(playerSelection, computerSelection) {
-    
+
     if (playerSelection == computerSelection) {
-        console.log("It's a draw!")
-    } else if ((playerSelection == "Rock" && computerSelection == "Paper") ||
-                (playerSelection == "Paper" && computerSelection == "Scissors") ||
-                (playerSelection == "Scissors" && computerSelection == "Rock")) {
+        infoText.textContent = "Draw!"
+    } else if ((playerSelection == "rock" && computerSelection == "paper") ||
+                (playerSelection == "paper" && computerSelection == "scissors") ||
+                (playerSelection == "scissors" && computerSelection == "rock")) {
         computerScore++
-        console.log("Computer has won round!")
+        computerScoreText.textContent = computerScore
     } else {
         playerScore++
-        console.log("Player has won round!")
+        infoText.textContent = "Player won!"
+        playerScoreText.textContent = playerScore
     }
 }
 
-function game() {
-    for (let i = 0; i <5; i++) {
-        if (playerScore > computerScore) {
-            console.log()
-        }
-    }
+function randomChoiceGenerator(){
+    let randomNumber = Math.floor(Math.random() * 3)
+    return choice[randomNumber]
+}
+
+function resetGame() {
+    infoText.textContent = "START"
+    playerScore = 0
+    computerScore = 0
+    playerScoreText.textContent = playerScore
+    computerScoreText.textContent = computerScore
+
+}
+
+function displayScore(playerSelection, computerSelection){
+    document.getElementById('computer-image').src = `./images/computer-${computerSelection}.png`
 }
